@@ -87,6 +87,9 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # Construct the full path to the image inside assets/
 image_path = os.path.join(BASE_DIR, "assets", "boston.jpg")
 
+print(f"Looking for background image at: {image_path}")
+print(f"Does the image file exist? {os.path.exists(image_path)}")
+
 # Call your function with the full path
 set_background(image_path)
 
@@ -513,11 +516,6 @@ elif page == "past_records":
 
 
 # In[ ]:
-
-
-
-
-
 
 
 
