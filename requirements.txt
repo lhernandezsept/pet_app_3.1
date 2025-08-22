@@ -6,7 +6,7 @@ gspread-dataframe
 google-auth
 pytz
 Pillow
-os
+
 
 
 
