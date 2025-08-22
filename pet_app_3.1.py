@@ -116,7 +116,13 @@ def get_latest_submission_summaries(n=5):
 
 # Styling and defining main page
 def main_page():
-    set_background("/Users/Lisbeth/Desktop/Programming/pet_app_2/Records/App python/boston.jpg")
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    image_path = os.path.join(BASE_DIR, "assets", "boston.jpg")
+    
+    if os.path.exists(image_path):
+        set_background(image_path)
+    else:
+        st.warning(f"Background image not found at {image_path}")
     show_clock()
 
     st.markdown('<h2>📝 Latest Activity</h2>', unsafe_allow_html=True)
