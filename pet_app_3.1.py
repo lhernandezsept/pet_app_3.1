@@ -62,10 +62,6 @@ def show_clock():
     st.markdown(clock_html + clock_css, unsafe_allow_html=True)
 
 
-import os
-import base64
-import streamlit as st
-
 def set_background(image_file, overlay="rgba(255, 255, 255, 0.6)"):
     """Set a background image with a transparent overlay (default: white 60%)."""
     with open(image_file, "rb") as img:
@@ -517,6 +513,11 @@ elif page == "past_records":
 
 
 # In[ ]:
+
+
+
+
+
 
 
 
