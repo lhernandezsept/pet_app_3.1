@@ -13,6 +13,7 @@ from datetime import datetime
 import pytz
 import base64
 from PIL import Image
+import os
 
 
 
@@ -61,7 +62,10 @@ def show_clock():
     st.markdown(clock_html + clock_css, unsafe_allow_html=True)
 
 
-# Function to set the background image with overlay
+import os
+import base64
+import streamlit as st
+
 def set_background(image_file, overlay="rgba(255, 255, 255, 0.6)"):
     """Set a background image with a transparent overlay (default: white 60%)."""
     with open(image_file, "rb") as img:
@@ -80,6 +84,15 @@ def set_background(image_file, overlay="rgba(255, 255, 255, 0.6)"):
             }}
         </style>
     """, unsafe_allow_html=True)
+
+# Get the directory where this script is located
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Construct the full path to the image inside assets/
+image_path = os.path.join(BASE_DIR, "assets", "boston.jpg")
+
+# Call your function with the full path
+set_background(image_path)
 
 
 # Fetch the latest activity records
