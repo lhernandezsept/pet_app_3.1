@@ -1,7 +1,0 @@
-streamlit
-gspread
-oauth2client
-gspread-dataframe
-
-
-
