@@ -15,15 +15,21 @@ import base64
 from PIL import Image
 
 
+
 # ------------------------------
 # Google Sheets Setup
 # ------------------------------
 
-SERVICE_ACCOUNT_FILE = "/Users/Lisbeth/Desktop/Programming/pet_app_2/Records/App python/pet-app-2-469214-95adea5a0803.json"  # JSON file
-SCOPES = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
 
-# Authenticate
-creds = Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
+
+# Load credentials from Streamlit secrets
+creds = Credentials.from_service_account_info(
+    st.secrets["gcp_service_account"],
+    scopes=SCOPES
+)
+
+# Authorize the gspread client
 client = gspread.authorize(creds)
 
 SPREADSHEET_ID = "1UNo82AyTd07v_z1AytJpsPG5HO7xun9KyGsHSJ5QcqE"
